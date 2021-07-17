@@ -1,0 +1,21 @@
+Neste ficheiro estão descritas as condições para a execução do projecto bem como os pontos a se melhorarem
+
+link: http://localhost:8089/
+
+Pontos a se melhorarem e por se desenvolver
+Regitro de Prescrições de medicamentos
+Ocorrências(registro de toda e qualquer relevante ocorrência associada ao idoso).
+
+
+Pontos Fracos no Projecto
+No menu principal não se pode entra no menu Idosos e Funcionario em seguida(gera um erro que não foi possivel corrigir)
+neste sentido o usuario deve logo após de entrar num desses menus clicar para o menu Home, so assim será possivel
+a posterior entrar para o menu Funcionário.
+
+
+Alterações
+Inicialmente foi desenhado um mokup e estruturas de paginas, entretanto ao longo do desenvolvimento do projecto algumas
+alterações ocorream, e que a versão final de layout difere daquilo que foi apresentado no principio.
+
+
+

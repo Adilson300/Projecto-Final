@@ -1,0 +1,59 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{texto}}</div>
+  {{else}}
+{{/each}}
+
+
+<h3>Editar Idoso</h3>
+<div class="card">
+				<div class="card-body"> 
+
+<form action="/admin/idosos/edit" method="POST">
+    <input type="hidden" name="id" value="{{idoso._id}}">
+						<label for="nomecompleto">Nome Completo</label>
+			<input type="text" name="nomecompleto" class="form-control"   style="border: 2px solid #ccc;width: 90%;" value="{{idoso.nomecompleto}}">
+
+            <label for="nometratado">Nome a ser Tratado</label>
+			<input type="text" name="nometratado" class="form-control"  style="border: 2px solid #ccc;width: 90%;" value="{{idoso.nometratado}}">
+
+            <label for="nprocesso">Número do Processo</label>
+			<input type="text" name="nprocesso" class="form-control"   style="border: 2px solid #ccc;width: 25%;" value="{{idoso.nprocesso}}">
+			 
+            <label for="Idade">Idade</label>
+			<input type="text" name="idade" class="form-control"   style="border: 2px solid #ccc;width: 25%;" value="{{idoso.idade}}"> 
+			
+     		<label for="sexo">Sexo</label>
+                        <select name="sexo" class="form-control"  style="border: 2px solid #ccc;width: 25%;">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+            
+            <label for="sexo">Estado Civíl</label>
+                        <select name="estadocivil" class="form-control"  style="border: 2px solid #ccc;width: 25%;">
+                            <option value="Solteiro(a)">Solteiro(a)</option>
+                            <option value="Casado(a)">Casado(a)</option>
+                            <option value="Viuvo(a)">Viuvo(a)</option>
+                            <option value="Divorciado(a)">Divorciado(a)</option>
+                        </select>
+        
+            
+            <label for="profissao">Profissão</label>
+				<input type="text" name="profissao" class="form-control"   style="border: 2px solid #ccc;width: 90%;" value="{{idoso.profissao}}">	
+
+            <label for="nacionalidade">Nacionalidade</label>
+				<input type="text" name="nacionalidade" class="form-control"   style="border: 2px solid #ccc;width: 90%;" value="{{idoso.nacionalidade}}">    
+
+            <label for="doencacronica">Doenças Crónicas</label>
+              <textarea name="doencacronica" class="form-control"   style="border: 2px solid #ccc;width: 90%;">{{idoso.doencacronica}}</textarea>
+
+            <label for="nomeparente">Nome Parente</label>
+				<input type="text" name="nomeparente" class="form-control"   style="border: 2px solid #ccc;width: 90%;" value="{{idoso.nomeparente}}">	
+				
+            
+            <br>
+			<button class="btn btn-primary" type="submit">Editar Idoso</button>
+			
+			
+		  </form>
+          </div>
+				</div>

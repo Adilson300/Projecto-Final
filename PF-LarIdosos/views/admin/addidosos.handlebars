@@ -1,0 +1,56 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{texto}}</div>
+  {{else}}
+{{/each}}
+
+<h3>Novo Idoso</h3>
+<div class="card">
+				<div class="card-body"> 
+
+<form action="/admin/idosos/novo" method="POST">
+			<label for="nomecompleto">Nome Completo</label>
+			<input type="text" name="nomecompleto" class="form-control"   style="border: 2px solid #ccc;width: 90%;">
+
+            <label for="nometratado">Nome a ser Tratado</label>
+			<input type="text" name="nometratado" class="form-control"  style="border: 2px solid #ccc;width: 90%;">
+
+            <label for="nprocesso">Número do Processo</label>
+			<input type="text" name="nprocesso" class="form-control"   style="border: 2px solid #ccc;width: 25%;">
+			 
+            <label for="Idade">Idade</label>
+			<input type="text" name="idade" class="form-control"   style="border: 2px solid #ccc;width: 25%;">
+			
+     		<label for="sexo">Sexo</label>
+                        <select name="sexo" class="form-control"  style="border: 2px solid #ccc;width: 25%;">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+            
+            <label for="sexo">Estado Civíl</label>
+                        <select name="estadocivil" class="form-control"  style="border: 2px solid #ccc;width: 25%;">
+                            <option value="Solteiro(a)">Solteiro(a)</option>
+                            <option value="Casado(a)">Casado(a)</option>
+                            <option value="Viuvo(a)">Viuvo(a)</option>
+                            <option value="Divorciado(a)">Divorciado(a)</option>
+                        </select>
+        
+            
+            <label for="profissao">Profissão</label>
+				<input type="text" name="profissao" class="form-control"   style="border: 2px solid #ccc;width: 90%;">	
+
+            <label for="nacionalidade">Nacionalidade</label>
+				<input type="text" name="nacionalidade" class="form-control"   style="border: 2px solid #ccc;width: 90%;">    
+
+            <label for="doencacronica">Doenças Crónicas</label>
+              <textarea name="doencacronica" class="form-control"   style="border: 2px solid #ccc;width: 90%;"></textarea>
+
+            <label for="nomeparente">Nome Parente</label>
+				<input type="text" name="nomeparente" class="form-control"   style="border: 2px solid #ccc;width: 90%;">	
+				
+            
+            <br>
+			<button class="btn btn-primary" type="submit">Criar Idoso</button>
+			
+		  </form>
+          </div>
+				</div>
