@@ -72,7 +72,10 @@ app.get("admin/idosos",(req, res) =>{
 app.get("admin/funcionarios",(req, res) =>{
     res.render('admin/funcionarios.handlebars')
 })
- 
+
+app.get("admin/ocorrencias",(req, res) =>{
+    res.render('admin/ocorrencias.handlebars')
+})
 
 app.use('/admin', admin)
 app.use('/usuarios', usuarios)

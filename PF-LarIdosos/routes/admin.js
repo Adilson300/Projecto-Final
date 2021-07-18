@@ -5,12 +5,13 @@ require("../models/Funcionario")
 require("../models/Idoso")
 const Funcionario = mongoose.model("funcionarios")
 const Idoso = mongoose.model("idosos")
+require("../models/Ocorrencia")
+const Ocorrencia = mongoose.model("ocorrencias")
 
 router.get('/', (req, res) => {
     res.render("admin/index.handlebars")
     
 })
-
 
 //.................................funcionario
 //Página Inicial
@@ -227,5 +228,58 @@ router.post("/idosos/edit",(req, res) => {
     })
 })
 
+
+//.................................ocorrencias
+router.get('/ocorrencias', (req, res) => {
+    Ocorrencia.find().populate("idoso").sort({data:"desc"}).then((ocorrencias) => {
+        res.render("admin/ocorrencias.handlebars", {ocorrencias: ocorrencias})
+    }).catch((err) => {
+        req.flash("error_msg", "Houve um erro ao listar ocorrências")
+        res.redirect("/admin")
+    })
+   
+
+})
+
+router.get('/ocorrencias/add', (req, res) => {
+    Idoso.find().then((idosos) =>{
+        res.render("admin/addocorrencias.handlebars",{idosos:idosos})
+    }).catch((err) => {
+        req.flash("error_msg", "Houve um erro ao carregar o formulário")
+        res.redirect("/admin")
+    })
+   
+
+})
+
+router.post('/ocorrencias/novo', (req, res) => {
+    var erros =[]
+
+    if(req.body.idoso == "0"){
+        erros.push({texto: "Sem Registro, registre um Idoso"})
+    }
+   if(erros.length > 0){
+       res.render("admin/addocorrencias.handlebars",{erros:erros})
+   }else{
+       const novaOcorrencia = {
+        idoso:              req.body.idoso,
+        tipoocorrencia:     req.body.tipoocorrencia,
+        assistenciamedica:  req.body.assistenciamedica,
+        descricao:          req.body.descricao
+       }
+       
+       new Ocorrencia(novaOcorrencia).save().then(() =>{
+           req.flash("success_msg", "Ocorrência criada com sucesso!")
+           res.redirect("/admin/ocorrencias")
+       }).catch((err) => {
+        req.flash("error_msg", "Houve um erro ao salvar uma ocorrência!")
+        res.redirect("/admin/ocorrencias")
+    })
+   }
+
+})
+
+
+//.................................fim ocorrencias
 
 module.exports = router

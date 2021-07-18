@@ -1,0 +1,44 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{texto}}</div>
+  {{else}}
+{{/each}}
+
+
+
+<h3 class="mt-4">Nova Ocorrência</h3>
+<div class="card">
+				<div class="card-body"> 
+
+<form action="/admin/ocorrencias/novo" method="POST">
+				<label for="idoso">Idoso</label>
+				 <select name="idoso" class="form-control"  style="border: 2px solid #ccc;width: 90%; height:30%">
+                   {{#each idosos}}     
+                      <option value="{{_id}}">{{nomecompleto}} </option>
+                   {{else}}     
+                      <option value="0">Nenhum idoso registrado</option>
+                   {{/each}}                          
+          </select>
+			
+				<label for="tipoocorrencia">Tipo de Ocorrência</label>
+                        <select name="tipoocorrencia" class="form-control"  style="border: 2px solid #ccc;width: 90%; height:30%">
+                            <option value="Normal">Normal</option>
+                            <option value="Moderada">Moderada</option>
+                            <option value="Crítica">Crítica</option>                            
+                        </select>
+ 
+        <label for="assistenciamedica">Teve Assistência Médica</label>
+                        <select name="assistenciamedica" class="form-control"  style="border: 2px solid #ccc;width: 90%; height:30%">
+                            <option value="Não">Não</option>
+                            <option value="Sim">Sim</option>
+                                                      
+                        </select>
+                                
+        
+        <label for="descricao">Prescrição</label>
+        <textarea name="descricao" class="form-control"   style="border: 2px solid #ccc;width: 90%;" required></textarea>
+				<br>
+			<button class="btn btn-primary" type="submit">Criar Ocorrências</button>
+			
+		  </form>
+          </div>
+				</div>

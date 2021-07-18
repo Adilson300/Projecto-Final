@@ -4,18 +4,19 @@ link: http://localhost:8089/
 
 Pontos a se melhorarem e por se desenvolver
 Regitro de Prescrições de medicamentos
-Ocorrências(registro de toda e qualquer relevante ocorrência associada ao idoso).
+
 
 
 Pontos Fracos no Projecto
-No menu principal não se pode entra no menu Idosos e Funcionario em seguida(gera um erro que não foi possivel corrigir)
+Estando no menu principal não se pode entra no menu Idosos e de seguida nos menus Funcionario e OcorrÊncia em seguida(gera um erro que não foi possivel corrigir)
 neste sentido o usuario deve logo após de entrar num desses menus clicar para o menu Home, so assim será possivel
-a posterior entrar para o menu Funcionário.
+a posterior entrar para os outros menus.
 
 
 Alterações
 Inicialmente foi desenhado um mokup e estruturas de paginas, entretanto ao longo do desenvolvimento do projecto algumas
-alterações ocorream, e que a versão final de layout difere daquilo que foi apresentado no principio.
+alterações ocorream, e que a versão final de layout difere daquilo que foi apresentado no principio no Mokup.
+
 
 
 
